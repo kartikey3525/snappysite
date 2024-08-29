@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default"
+  },
+  "snappy": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default"
+  },
+  "snappyserv": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/rajivkumar/.amplify/awscloudformation/WFDTZ9UuHJ"
+  }
+}
