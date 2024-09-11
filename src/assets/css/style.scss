@@ -66,7 +66,7 @@ section .panel-heading:before{position:absolute;content:'';width:50px;height:3px
 #howitwork h4{color:#2d2b2d;font-size:22px;font-weight:600;line-height:18px;margin:20px 0;}
 #services{padding-bottom:0px;}
 .services-list{margin:0;padding:0;}
-.services-list li{width:155px;height:115px;background-color:#fafafa;display:inline-block;border:1px #f9f9f9 solid;margin-right:1px;margin-bottom:10px;padding:10px 0 0 0;vertical-align:middle;}
+.services-list li{width:240px;height:115px;background-color:#fafafa;display:inline-block;border:1px #f9f9f9 solid;margin-right:10px;margin-bottom:20px;padding:10px 0 0 0;vertical-align:middle;}
 .services-list li:hover{border-bottom-color:#23e4ea;}
 .services-list li:hover a{color:#23e4ea;text-decoration:none;}
 .services-list li a{color:#333333;display:block;height:100%;font-size:14px;}

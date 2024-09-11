@@ -10,9 +10,9 @@ SwiperCore.use([Navigation, Autoplay]);
 function Promo() {
    const serviceSlider= {
     loop: true,
-    speed: 1000,
+    speed: 900,
     autoplay:{
-      delay: 2500,
+      // delay: 200,
       disableOnInteraction: false,
     },
     slidesPerView: 3,
