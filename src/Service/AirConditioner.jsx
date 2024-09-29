@@ -141,7 +141,7 @@ function AirConditioner() {
               </h1>
 
               <div style={{ overflow: "hidden" }}>
-                <img
+                {/* <img
                   src="../assets/images/hvac_3.jpg"
                   style={{
                     borderRadius: "30px",
@@ -151,7 +151,7 @@ function AirConditioner() {
                     margin: " 15px 15px 0",
                   }}
                   alt=""
-                />
+                /> */}
                 <p className="text-left" style={{ fontSize: "20px" }}>
                   Routine Inspections: Regular maintenance is key to extending
                   the lifespan of your HVAC system. We offer scheduled
@@ -272,13 +272,12 @@ function AirConditioner() {
                 </div>
                 <QuickContact />
               </div>
-              <QuickLink />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="What_offer">
+      {/* <section id="What_offer">
         <div className="container text-justify">
           <h1 className="panel-heading text-center">
             Why Snappy best choice for you?
@@ -314,7 +313,7 @@ function AirConditioner() {
             appliances service in Delhi, Ghaziabad, Noida and NCR.
           </p>
         </div>
-      </section>
+      </section> */}
       <section id="service-faq">
         <div className="container text-center">
           <h1 className="panel-heading">Frequently Asked Questions</h1>
