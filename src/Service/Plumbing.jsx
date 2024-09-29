@@ -332,40 +332,60 @@ function Plumbing() {
             className="row text-left text-justify"
             style={{ marginTop: "15px", verticalAlign: "middle" }}
           >
+            <h1 className="panel-heading text-center">
+              Why Snappy best choice for you?
+            </h1>
             <div className="col-md-12 col-sm-12 col-xs-12">
               <p>
-                Snappy Services is a leading provider of plumbing repairs in
-                Ghaziabad and NCR. We wouldn’t be the company we are today if it
-                wasn’t for our fantastic plumbers! We are proud to call
-                ourselves plumbing industry experts. If you need a plumbing job
-                done right, call the certified plumbers here at snappy!
+                At Snappy Services, we pride ourselves on being a leading
+                provider of comprehensive plumbing solutions for commercial
+                properties across Ghaziabad and the NCR region. With a team of
+                certified and highly skilled plumbers, we specialize in
+                delivering efficient and lasting plumbing repairs and
+                maintenance tailored for businesses, property management firms,
+                and commercial facilities.
                 <br></br>
                 <br></br>
-                When you ignore a minor plumbing problem, it can easily turn
-                into an issue requiring a serious and expensive repair. Even
-                something as small as a dripping faucet can end up damaging your
-                home if it’s not taken care. That’s why it’s so important to
-                have a plumbing repair company you can trust when repairs are
-                needed.
+                We understand that even minor plumbing issues in a commercial
+                setting can lead to significant downtime, operational
+                disruptions, and costly repairs if left unaddressed. From a
+                leaking faucet to complex drainage systems, timely intervention
+                is key to maintaining the safety and functionality of your
+                building. That’s why businesses across the region trust Snappy
+                Services for proactive, reliable, and cost-effective plumbing
+                solutions.
                 <br></br>
                 <br></br>
-                Diagnosing plumbing problems can involve some trial and error,
-                but the better trained a technician is, the less error will be
-                involved. At snappy, we have confidence in our team and stand
-                behind all our work with a warranty. This means we fix problems
-                right the first time and complete lasting repairs to the highest
-                possible standards of quality.
+                Our approach is built on precision and expertise. With extensive
+                industry knowledge, our technicians diagnose and fix plumbing
+                issues with minimal disruption to your operations. We back our
+                work with a warranty, ensuring that our solutions are not just
+                quick fixes but long-lasting repairs that meet the highest
+                standards of quality and compliance.
                 <br></br>
                 <br></br>
                 As a professional company, we treat our customers like friends
                 and neighbours, because that’s what they are!
                 <br></br>
                 <br></br>
-                Whatever you need us for, our promise is simple: High-quality
-                service at a reasonable price. Before our plumbers start any
-                job, they’ll explain the repairs you need and the total cost of
-                the services. Get in touch with us today to schedule a plumbing
-                service.
+                Expert Team: Our certified plumbers are trained to handle the
+                unique challenges of commercial plumbing, from complex
+                installations to emergency repairs.
+                <br></br>
+                <br></br>
+                Reliability: We deliver on time and within budget, ensuring your
+                business can continue to operate smoothly.
+                <br></br>
+                <br></br>
+                Transparent Pricing: Before we begin, we provide a clear
+                explanation of the work required and a detailed cost breakdown,
+                so there are no surprises. High Standards: Our work adheres to
+                the highest industry standards, ensuring safety and longevity
+                for your plumbing systems. Partner with Snappy Services for
+                dependable plumbing support that keeps your commercial
+                operations running smoothly. Contact us today to discuss your
+                business’s plumbing requirements and schedule a service
+                consultation.
               </p>
             </div>
           </div>

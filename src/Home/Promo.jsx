@@ -34,32 +34,38 @@ function Promo() {
         }
     }
   }
-    return(
-         <div className="container text-center" style={{marginTop: '0px'}}>
-          <Swiper
-     {...serviceSlider}
-    >
-      <SwiperSlide>
-     
-          <img src="../assets/images/mep.png" alt="" className='img-responsive'/>
-       
-      </SwiperSlide>
-      <SwiperSlide>
-       
-          <img src="../assets/images/ht.png" alt="" className='img-responsive' />
-       
-      </SwiperSlide>
-      <SwiperSlide>
-       
-          <img src="../assets/images/electrical.png" alt="" className='img-responsive'/>
-        
-      </SwiperSlide>
-      
-     
-    </Swiper>
-        
-        
-        
+    return (
+      <div className="container text-center" style={{ marginTop: "0px" }}>
+        <Swiper {...serviceSlider}>
+          <SwiperSlide>
+            <img
+              src="../assets/images/new banners/bannerC.png"
+              alt=""
+              className="img-responsive"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="../assets/images/new banners/bannerA.png"
+              alt=""
+              className="img-responsive"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="../assets/images/new banners/bannerD.png"
+              alt=""
+              className="img-responsive"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="../assets/images/new banners/bannerB.png"
+              alt=""
+              className="img-responsive"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     );
 }

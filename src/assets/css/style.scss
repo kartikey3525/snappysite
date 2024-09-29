@@ -36,7 +36,12 @@ ul li{
 .right-contact{list-style:none;text-align:right;padding:20px 0px;margin:0;}
 .right-contact li{color:#3ea4d6;display:inline-block;font-size:18px;font-family:'Open Sans', sans-serif;font-weight:400;}
 .right-contact li:first-child{margin-right:15px;}
-#banner{padding:100px 0 200px;color:#FFF;background:url(../images/banner1.png) repeat scroll center 0/cover;position:relative;}
+#banner {
+    padding: 60px 0 80px;
+    color: #FFF;
+    background: url(../images/homebg3.png) repeat scroll center 0/cover;
+    position: relative;
+}
 #banner .panel-heading{margin-top:15px !important;}
 #banner .panel-heading::before{background:none;}
 .book-now-home{background-color:#fff;border-radius:5px;margin:25px auto 0;max-width:550px;min-height:60px;padding:4px;width:auto;}

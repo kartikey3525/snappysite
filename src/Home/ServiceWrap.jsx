@@ -9,6 +9,21 @@ function ServiceWrap() {
           <li>
             {" "}
             <Link
+              to={`${process.env.PUBLIC_URL}/mechanical-electrical-plumbing-contractor`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <img
+                src="../assets/images/services-icons/mep.png"
+                alt="plumbing"
+              />
+              <br />
+              MEP Services
+            </Link>
+          </li>
+
+          <li>
+            {" "}
+            <Link
               to={`${process.env.PUBLIC_URL}/air-conditioner`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
@@ -47,21 +62,6 @@ function ServiceWrap() {
               />
               <br />
               HT Line Work
-            </Link>
-          </li>
-
-          <li>
-            {" "}
-            <Link
-              to={`${process.env.PUBLIC_URL}/mechanical-electrical-plumbing-contractor`}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              <img
-                src="../assets/images/services-icons/mep.png"
-                alt="plumbing"
-              />
-              <br />
-              MEP Services
             </Link>
           </li>
 
