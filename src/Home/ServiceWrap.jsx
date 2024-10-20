@@ -9,12 +9,12 @@ function ServiceWrap() {
           <li>
             {" "}
             <Link
-              to={`${process.env.PUBLIC_URL}/mechanical-electrical-plumbing-contractor`}
+              to={`${process.env.PUBLIC_URL}/mep-services`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
                 src="../assets/images/services-icons/mep.png"
-                alt="plumbing"
+                alt="mep-services"
               />
               <br />
               MEP Services
@@ -24,7 +24,7 @@ function ServiceWrap() {
           <li>
             {" "}
             <Link
-              to={`${process.env.PUBLIC_URL}/air-conditioner`}
+              to={`${process.env.PUBLIC_URL}/hvac`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
@@ -61,7 +61,7 @@ function ServiceWrap() {
                 alt="plumbing"
               />
               <br />
-              HT Line Work
+              Sub-Station Work
             </Link>
           </li>
 
@@ -83,7 +83,7 @@ function ServiceWrap() {
           <li>
             {" "}
             <Link
-              to={`${process.env.PUBLIC_URL}/solar-appliances`}
+              to={`${process.env.PUBLIC_URL}/fire-fitting`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img

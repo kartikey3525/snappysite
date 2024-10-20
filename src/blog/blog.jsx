@@ -23,16 +23,47 @@ function Blog() {
                   
                  
              return (
-                 
-                <div className='col-md-4' style={{margin:'40px 0px 40px 0px',padding:'15px'}}>
-           <img src={image} className="img-responsive" style={{borderRadius: '30px'}} alt=""/>
-           <h3>{title}</h3>
-           {short}<br/><br/>
-           <Link to={`${process.env.PUBLIC_URL}/article/${id}/${uri}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><button className="btn btn-primary">Read more</button></Link>
-           </div>
-               
-              
-              );
+               <div
+                 className="row"
+                 style={{
+                   margin: "40px 0px 40px 0px",
+                   padding: "15px",
+                   display: "flex",
+                 }}
+               >
+                 <img
+                   src={image}
+                   className="img-responsive"
+                   style={{
+                     borderRadius: "30px",
+                     width: "50rem",
+                     height: "30rem",
+                   }}
+                   alt=""
+                 />
+                 <div
+                   style={{
+                     padding: "15px",
+                     alignContent: "start",
+                   }}
+                 >
+                   <h3>{title}</h3>
+                   {short}
+                   <br />
+                   <br />
+                   <br />
+                   <br />
+                   <Link
+                     to={`${process.env.PUBLIC_URL}/article/${id}/${uri}`}
+                     onClick={() =>
+                       window.scrollTo({ top: 0, behavior: "smooth" })
+                     }
+                   >
+                     <button className="btn btn-primary">Read more</button>
+                   </Link>
+                 </div>
+               </div>
+             );
              })}
            
         </div>

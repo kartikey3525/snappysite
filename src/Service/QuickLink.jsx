@@ -19,7 +19,7 @@ export default class QuickLink extends Component {
             <ul className="featurs_list" style={{}}>
               <li>
                 <Link
-                  to={`${process.env.PUBLIC_URL}/air-conditioner`}
+                  to={`${process.env.PUBLIC_URL}/hvac`}
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
@@ -66,7 +66,7 @@ export default class QuickLink extends Component {
               </li>
               <li>
                 <Link
-                  to={`${process.env.PUBLIC_URL}/solar-appliances`}
+                  to={`${process.env.PUBLIC_URL}/fire-fitting`}
                   style={{ color: "#000", fontSize: "20px", fontWeight: "700" }}
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
