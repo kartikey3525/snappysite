@@ -31,15 +31,28 @@ ul li{
 #header .navbar-toggle{margin-right:0px;}
 #header .fa.fa-phone{font-size:20px;color:#535353;}
 #header .navbar-toggle .icon-bar{background:#000;}
-.navbar-brand .logo-dark{padding:0px 0;}
+.navbar-brand .logo-dark {}
 .navbar{margin:0;}
 .right-contact{list-style:none;text-align:right;padding:20px 0px;margin:0;}
 .right-contact li{color:#3ea4d6;display:inline-block;font-size:18px;font-family:'Open Sans', sans-serif;font-weight:400;}
 .right-contact li:first-child{margin-right:15px;}
+.prev-button,
+.next-button {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    // background-color: rgba(0, 0, 0, 0.8);
+}
 #banner {
-    padding: 60px 0 80px;
     color: #FFF;
-    background: url(../images/homebg3.png) repeat scroll center 0/cover;
+    // background: url(../images/homebg3.png) repeat scroll center 0/cover;
     position: relative;
 }
 #banner .panel-heading{margin-top:15px !important;}
@@ -175,6 +188,41 @@ footer .form-control::-moz-placeholder{color:#fff;}
 .top_awro{background:#23e5eb none repeat scroll 0 0;cursor:pointer;padding:6px 8px;position:fixed;bottom:59px;right:20px;display:none;}
 .top_awro .fa{font-size:20px;padding-right:0;}
 .container-fluid.footerbg{position:relative;}
+/* Footer background */
+.footer-section {
+    position: relative;
+    background-image: url("../images/newfooter.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0;
+    color: #fff;
+}
+
+.footer-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Optional overlay for better readability */
+    z-index: 1;
+}
+
+.footer-section .container,
+.footer-section .row,
+.footer-section .col-md-3 {
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    color: #fff;
+}
 .home_two #banner{background:url(../images/02home/home_two_banner.jpg) repeat scroll center 0/cover;padding:155px 0 250px;}
 #banner .panel-heading::before{background:none;}
 .home_two_banner::before{background:rgba(69,174,231,1);background:-moz-linear-gradient(left, rgba(69,174,231,1) 0%, rgba(69,174,231,0.7) 0%, rgba(0,96,27,0.7) 100%);background:-webkit-gradient(left top, right top, color-stop(0%, rgba(69,174,231,1)), color-stop(0%, rgba(69,174,231,0.7)), color-stop(100%, rgba(0,96,27,0.7)));background:-webkit-linear-gradient(left, rgba(69,174,231,1) 0%, rgba(69,174,231,0.7) 0%, rgba(0,96,27,0.7) 100%);background:-o-linear-gradient(left, rgba(69,174,231,1) 0%, rgba(69,174,231,0.7) 0%, rgba(0,96,27,0.7) 100%);background:-ms-linear-gradient(left, rgba(69,174,231,1) 0%, rgba(69,174,231,0.7) 0%, rgba(0,96,27,0.7) 100%);background:linear-gradient(to right, rgba(69,174,231,1) 0%, rgba(69,174,231,0.7) 0%, rgba(0,96,27,0.7) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#45aee7', endColorstr='#00601b', GradientType=1);content:"";display:block;height:100%;left:0;min-height:264px;position:absolute;top:0;width:100%;}

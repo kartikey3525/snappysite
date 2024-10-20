@@ -350,7 +350,7 @@ function ElectricalContractor() {
                 <ul>
                   <li>LED Lights</li>
                   <li>Street Lights</li>
-                  <li>Solar Panels</li>
+                  <li>Fire Fitting</li>
                   <li>Budget Estimation</li>
                   <li>Wires and cables</li>
                   <li>DG Sets</li>

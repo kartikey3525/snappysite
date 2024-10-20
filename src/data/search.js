@@ -2,13 +2,13 @@ const data = [
     {
         id:1,
         title: "MEP Services",
-        link: "mechanical-electrical-plumbing-contractor",
+        link: "mep-services",
         
     },
     {
         id:2,
         title: "HVAC Services",
-        link:"air-conditioner",
+        link: "hvac",
         
     },
     {
@@ -26,7 +26,7 @@ const data = [
     {
         id:5,
         title: "Fire Fitting Services",
-        link: "solar-appliances",
+        link: "fire-fitting",
         
     },
     {

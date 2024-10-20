@@ -66,16 +66,18 @@ function LineWork() {
                   marginBottom: "55px",
                 }}
               >
-                HT Line Work
+                Sub Station Work
               </h1>
-              <p>
+              <p className="text-left" style={{ fontSize: "20px" }}>
                 High Tension (HT) and Low Tension (LT) Line Work: Ensuring
-                Reliable Electrical Distribution Welcome to our comprehensive
-                guide on HT (High Tension) and LT (Low Tension) line work.
-                Whether you are a property owner, a business manager, or simply
-                interested in the technical aspects of electrical distribution,
-                understanding the nuances of HT and LT lines is crucial for
-                ensuring a stable and reliable power supply.
+                Reliable Electrical Distribution.
+                <br />
+                Welcome to our comprehensive guide on HT (High Tension) and LT
+                (Low Tension) line work for sub station. Whether you are a
+                property owner, a business manager, or simply interested in the
+                technical aspects of electrical distribution, understanding the
+                nuances of HT and LT lines is crucial for ensuring a stable and
+                reliable power supply.
               </p>
             </div>
             <div className="col-md-4 col-sm-6 col-xs-12">

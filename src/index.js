@@ -18,7 +18,7 @@ import LineWork from './Service/LineWork';
 import ElectricalServices from './Service/ElectricalServices';
 import HomeAppliances from './Service/HomeAppliances';
 import ElectricalMotors from './Service/ElectricalMotors';
-import SolarAppliances from './Service/SolarAppliances';
+import FireFitting from './Service/FireFitting';
 import HomeAutomation from './Service/HomeAutomation';
 import RoService from './Service/RoService';
 import AirConditioner from './Service/AirConditioner';
@@ -45,7 +45,10 @@ function Root() {
   
   return <>
 <BrowserRouter >
-<Header/>
+      <Header />
+      <div style={{ marginTop: "90px" }}> {/* Adjust based on header height */}
+        {/* This is where your Routes or page content would be rendered */}
+      </div>
 <Routes>
  <Route exact path="/" element={<App/>} />
  <Route exact path="/terms-and-conditions" element={<Terms/>} />
@@ -59,7 +62,7 @@ function Root() {
   <Route exact path="/contactus.html" element={<Contact/>} />
   <Route exact path="/electrical-contractor" element={<ElectricalContractor/>} />
   <Route exact path="/line-work" element={<LineWork/>} />
-  <Route exact path="/mechanical-electrical-plumbing-contractor" element={<Mep/>} />
+        <Route exact path="/mep-services" element={<Mep />} />
         <Route exact path="/electrical-contractor.aspx" element={<ElectricalContractor />} />
   <Route exact path="/electrical-services" element={<ElectricalServices/>} />
   <Route exact path="/electrical-services.html" element={<ElectricalServices/>} />
@@ -68,13 +71,13 @@ function Root() {
   <Route exact path="/home-appliances.html" element={<HomeAppliances/>} />
   <Route exact path="/electrical-motors" element={<ElectricalMotors/>} />
   <Route exact path="/electrical-motors.html" element={<ElectricalMotors/>} />
-  <Route exact path="/solar-appliances" element={<SolarAppliances/>} />
-  <Route exact path="/solar-appliances.html" element={<SolarAppliances/>} />
+        <Route exact path="/fire-fitting" element={<FireFitting />} />
+        <Route exact path="/fire-fitting.html" element={<FireFitting />} />
   <Route exact path="/home-automation" element={<HomeAutomation/>} />
   <Route exact path="/home-automation.html" element={<HomeAutomation/>} />
   <Route exact path="/ro-services" element={<RoService/>} />
   <Route exact path="/ro-services.aspx" element={<RoService/>} />
-  <Route exact path="/air-conditioner" element={<AirConditioner/>} />
+        <Route exact path="/hvac" element={<AirConditioner />} />
   <Route exact path="/lcd-led-tv" element={<Tv/>} />
   <Route exact path="/washing-machine" element={<WashingMachine/>} />
   <Route exact path="/refrigerator" element={<Refrigerator/>} />
