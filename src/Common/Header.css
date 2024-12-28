@@ -33,7 +33,7 @@
     position: relative; /* Needed for dropdown positioning */
   }
   
-  .dropdown-content {
+  .dropdown-content { 
     display: none; /* Hidden by default */
     position: absolute; /* Position the dropdown */
     background-color: white; /* Background color for dropdown */
@@ -41,7 +41,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
     z-index: 1; /* Ensure dropdown is above other elements */
     border-radius: 5px; /* Rounded corners */
-    /* margin-top: '50px'; */
   }
   
   .dropdown:hover .dropdown-content {
@@ -75,9 +74,7 @@
   color: #000000;
   align-items: center; /* Center text vertically */
 }
-
  
-
   .hamburger {
     display: none;
     flex-direction: column;
@@ -108,7 +105,7 @@
     }
     .nav-menu {
       position: fixed; /* Ensures the menu stays in place */
-      top: 90px;
+      top: 80px;
       right: 0;
       width: 100%;  /* Full height for a mobile menu */
       background-color: white;
@@ -130,6 +127,9 @@
     /* Hide contact details on mobile */
     .contact-container {
       display: none !important;
+    }
+    .nav-menu.open .nav-link {
+      font-size: 5vw; /* Adjust to your preference */
     }
   }
   
@@ -153,18 +153,48 @@
 .nav-menu.open .dropdown-content .dropdown-item {
   font-size: 2.3vw; /* Increased font size when the menu is open */
 }
-
-/* Contact Container - Hide contact details on mobile */
-@media (max-width: 768px) {
-  .contact-container {
-    display: none !important;
-  }
+ 
+/* Dropdown styles */
+.dropdown {
+  position: relative; /* Needed for dropdown positioning */
 }
 
-/* Additional styling for mobile responsiveness */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position the dropdown */
+  background-color: white; /* Background color for dropdown */
+  min-width: 190px; /* Minimum width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+  z-index: 1; /* Ensure dropdown is above other elements */
+  border-radius: 5px; /* Rounded corners */
+  transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+  color: black; /* Color for dropdown items */
+  padding: 6px 8px; /* Padding for items */
+  text-decoration: none; /* No underline */
+  display: block; /* Make items block elements */
+  font-weight: normal; /* Normal weight for dropdown items */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(to right, #40a8e7, #1de7eb); /* Gradient background on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* For mobile: Ensure dropdown opens on click */
 @media (max-width: 768px) {
-  /* Adjust the font size of the menu items in mobile */
-  .nav-menu.open .nav-link {
-    font-size: 5vw; /* Adjust to your preference */
+  .dropdown:hover .dropdown-content {
+    display: none; /* Disable hover effect for mobile */
+  }
+  
+  .dropdown-content.show {
+    display: block; /* Show dropdown when `.show` class is added */
   }
 }
