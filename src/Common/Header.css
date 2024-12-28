@@ -1,7 +1,7 @@
 /* Header.css */
 .nav-link {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 22px;
     font-weight: bold;
     position: relative; /* Required for ::after positioning */
@@ -61,4 +61,110 @@
     background: linear-gradient(to right, #40a8e7, #1de7eb); /* Gradient background on hover */
     color: white; /* Change text color on hover */
   }
+  /* Contact Container - Style for the contact section */
+.contact-container {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: flex-end; /* Align contact details to the right */
+}
+
+/* Contact Text - Center text vertically inside the contact container */
+.contact-text {
+  display: flex;
+  color: #000000;
+  align-items: center; /* Center text vertically */
+}
+
+ 
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
   
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+  }
+  
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-menu.open {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      display: none !important; /* Hide the entire contact container on mobile */
+    }
+    .hamburger {
+      display: flex;
+    }
+    .nav-menu {
+      position: fixed; /* Ensures the menu stays in place */
+      top: 90px;
+      right: 0;
+      width: 100%;  /* Full height for a mobile menu */
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(100%); /* Initially hidden off-screen */
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+      z-index: 1000; /* Above all other content */
+    }
+    
+    .nav-menu.open {
+      transform: translateX(0); /* Bring the menu into view when open */
+    }
+    
+  
+    /* Hide contact details on mobile */
+    .contact-container {
+      display: none !important;
+    }
+  }
+  
+
+  /* General styles for navigation links */
+.nav-menu .nav-link {
+  font-size: 2vw; /* Default font size for the links */
+}
+
+/* Increase font size for hamburger menu items */
+.nav-menu.open .nav-link {
+  font-size: 2.4vw; /* Increase the font size when the menu is open */
+}
+
+/* Adjust the dropdown menu font size */
+.dropdown-content .dropdown-item {
+  font-size: 2vw; /* Default size for dropdown items */
+}
+
+/* Make sure dropdown font size increases as well */
+.nav-menu.open .dropdown-content .dropdown-item {
+  font-size: 2.3vw; /* Increased font size when the menu is open */
+}
+
+/* Contact Container - Hide contact details on mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    display: none !important;
+  }
+}
+
+/* Additional styling for mobile responsiveness */
+@media (max-width: 768px) {
+  /* Adjust the font size of the menu items in mobile */
+  .nav-menu.open .nav-link {
+    font-size: 5vw; /* Adjust to your preference */
+  }
+}

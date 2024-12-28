@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css"; // Import the CSS file
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <header
       id="header"
@@ -30,27 +36,25 @@ function Header() {
         </Link>
       </div>
 
-      <div
-        style={{
-          width: "36vw",
-          height: "70px",
-          backgroundColor: "#40a8e7",
-          borderBottomRightRadius: "50px",
-          borderBottomLeftRadius: "50px",
-          position: "absolute",
-          marginLeft: "17%",
-          marginBottom: "1%",
-        }}
-      ></div>
+      {/* Hamburger Icon */}
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+
       {/* Navigation Links */}
-      <nav>
+      <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
         <ul style={styles.navList}>
           <li style={styles.navItem}>
             <Link
               to={`${process.env.PUBLIC_URL}/`}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className="nav-link"
-              style={{ textDecoration: "none", fontSize: "1.4vw" }}
+              style={styles.navitemText}
             >
               Home
             </Link>
@@ -58,9 +62,12 @@ function Header() {
           <li style={styles.navItem} className="dropdown">
             <Link
               to="/"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className="nav-link"
-              style={{ textDecoration: "none", fontSize: "1.4vw" }}
+              style={styles.navitemText}
             >
               Services
             </Link>
@@ -68,9 +75,12 @@ function Header() {
             <div className="dropdown-content">
               <Link
                 to="/mep-services"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 MEP Services
               </Link>
@@ -78,7 +88,7 @@ function Header() {
                 to="/hvac"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 HVAC/AC/VRV
               </Link>
@@ -86,7 +96,7 @@ function Header() {
                 to="/plumbing"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 Plumbing Services
               </Link>
@@ -94,7 +104,7 @@ function Header() {
                 to="/line-work"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 Sub-Station Work
               </Link>
@@ -102,7 +112,7 @@ function Header() {
                 to="/electrical-contractor"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 Electrical Contractor
               </Link>
@@ -110,7 +120,7 @@ function Header() {
                 to="/fire-fitting"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="dropdown-item"
-                style={{ textDecoration: "none", fontSize: "1vw" }}
+                style={styles.navitemText}
               >
                 Fire fighting
               </Link>
@@ -119,9 +129,12 @@ function Header() {
           <li style={styles.navItem}>
             <Link
               to="/contactus"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className="nav-link"
-              style={{ textDecoration: "none", fontSize: "1.4vw" }}
+              style={styles.navitemText}
             >
               Contact
             </Link>
@@ -129,9 +142,12 @@ function Header() {
           <li style={styles.navItem}>
             <Link
               to="/blog"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className="nav-link"
-              style={{ textDecoration: "none", fontSize: "1.4vw" }}
+              style={styles.navitemText}
             >
               Blog
             </Link>
@@ -139,9 +155,12 @@ function Header() {
           <li style={styles.navItem}>
             <Link
               to="/aboutus"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className="nav-link"
-              style={{ textDecoration: "none", fontSize: "1.4vw" }}
+              style={styles.navitemText}
             >
               About
             </Link>
@@ -149,13 +168,13 @@ function Header() {
         </ul>
       </nav>
 
-      {/* Contact Details */}
-      <div style={styles.contactContainer}>
-        <div style={styles.contactText}>
+      {/* Contact Details (Hidden on mobile) */}
+      <div className="contact-container">
+        <div className="contact-text">
           <h3 style={{ color: "grey", fontSize: "1vw" }}>Call support :</h3>
           <h3 style={styles.contactDetails}>+91-9999794426</h3>
         </div>
-        <div style={styles.contactText}>
+        <div className="contact-text">
           <h3 style={{ color: "grey", fontSize: "1vw", marginLeft: "1rem" }}>
             Email support :
           </h3>
@@ -181,20 +200,17 @@ const styles = {
     margin: 0,
   },
   navItem: {
-    marginLeft: "4rem",
-    marginBottom: "1rem",
-    position: "relative", // Required for dropdown positioning
+    marginLeft: "2rem",
+    marginRight: "2rem",
+    marginBottom: "1.2rem",
+    justifyContent: "center",
+    position: "relative",
   },
-  contactContainer: {
-    display: "flex",
-    marginBottom: "10px",
-    alignItems: "center",
-    justifyContent: "flex-end", // Align contact details to the right
+  navitemText: {
+    fontSize: "2vw",
+    textDecoration: "none",
   },
-  contactText: {
-    display: "flex",
-    alignItems: "center", // Center text vertically
-  },
+
   contactDetails: {
     color: "black",
     fontSize: "1vw",
