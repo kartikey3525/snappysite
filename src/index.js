@@ -22,6 +22,7 @@ import Blog from './blog/blog';
 import Article from './blog/article';
 import Mep from './Service/Mep';
 import Booking from './Service/Booking';
+import Plumbing from './Service/Plumbing';
 
 // import HomeAppliances from './Service/HomeAppliances';
 // import ElectricalMotors from './Service/ElectricalMotors';
@@ -40,7 +41,6 @@ import Booking from './Service/Booking';
 // import Fan from './Service/Fan';
 // import Induction from './Service/Induction';
 // import AirCooler from './Service/AirCooler';
-// import Plumbing from './Service/Plumbing';
 
 function Root() {
   
@@ -74,6 +74,7 @@ function Root() {
                     <Route exact path="/blog" element={<Blog />} />
                     <Route exact path="/testimonials" element={<Testimonials />} />
                     <Route exact path="/article/:id/:uri" element={<Article />} />
+        <Route exact path="/plumbing" element={<Plumbing />} />
 
                     {/*
   <Route exact path="/home-appliances" element={<HomeAppliances/>} />
@@ -97,7 +98,6 @@ function Root() {
        <Route exact path="/fan" element={<Fan/>} />
          <Route exact path="/induction" element={<Induction/>} />
           <Route exact path="/air-cooler" element={<AirCooler/>} />
-          <Route exact path="/plumbing" element={<Plumbing/>} />
            */}
 
 </Routes>

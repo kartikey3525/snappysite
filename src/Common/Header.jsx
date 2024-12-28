@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css"; // Import the CSS file
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Update `isMobile` state on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+  };
+
+  const toggleDropdown = () => {
+    if (isMobile) {
+      setIsDropdownOpen((prev) => !prev);
+    }
   };
 
   return (
@@ -30,7 +47,10 @@ function Header() {
       <div className="text-left">
         <Link
           to={`${process.env.PUBLIC_URL}`}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setIsMenuOpen(false);
+          }}
         >
           <img src="../assets/images/logo.png" alt="" width={80} />
         </Link>
@@ -59,12 +79,15 @@ function Header() {
               Home
             </Link>
           </li>
-          <li style={styles.navItem} className="dropdown">
+          <li
+            style={styles.navItem}
+            className={`dropdown ${isDropdownOpen ? "open" : ""}`}
+          >
             <Link
-              to="/"
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-                setIsMenuOpen(false);
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleDropdown();
               }}
               className="nav-link"
               style={styles.navitemText}
@@ -72,7 +95,7 @@ function Header() {
               Services
             </Link>
             {/* Dropdown Menu */}
-            <div className="dropdown-content">
+            <div className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}>
               <Link
                 to="/mep-services"
                 onClick={() => {
@@ -86,7 +109,10 @@ function Header() {
               </Link>
               <Link
                 to="/hvac"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
                 style={styles.navitemText}
               >
@@ -94,7 +120,10 @@ function Header() {
               </Link>
               <Link
                 to="/plumbing"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
                 style={styles.navitemText}
               >
@@ -102,7 +131,10 @@ function Header() {
               </Link>
               <Link
                 to="/line-work"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
                 style={styles.navitemText}
               >
@@ -110,7 +142,10 @@ function Header() {
               </Link>
               <Link
                 to="/electrical-contractor"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
                 style={styles.navitemText}
               >
@@ -118,7 +153,10 @@ function Header() {
               </Link>
               <Link
                 to="/fire-fitting"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
                 className="dropdown-item"
                 style={styles.navitemText}
               >
@@ -207,10 +245,9 @@ const styles = {
     position: "relative",
   },
   navitemText: {
-    fontSize: "2vw",
+    fontSize: "1.5vw",
     textDecoration: "none",
   },
-
   contactDetails: {
     color: "black",
     fontSize: "1vw",
