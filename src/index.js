@@ -16,31 +16,32 @@ import Contact from './Pages/Contact';
 import ElectricalContractor from './Service/ElectricalContractor';
 import LineWork from './Service/LineWork';
 import ElectricalServices from './Service/ElectricalServices';
-import HomeAppliances from './Service/HomeAppliances';
-import ElectricalMotors from './Service/ElectricalMotors';
 import FireFitting from './Service/FireFitting';
-import HomeAutomation from './Service/HomeAutomation';
-import RoService from './Service/RoService';
 import AirConditioner from './Service/AirConditioner';
-import Tv from './Service/Tv';
-import WashingMachine from './Service/WashingMachine';
-import Refrigerator from './Service/Refrigerator';
-import Microwave from './Service/Microwave';
-import Chimney from './Service/Chimney';
-import Geyser from './Service/Geyser';
-import Booking from './Service/Booking';
-import Mixer from './Service/Mixer';
-import FoodProcessor from './Service/FoodProcessor';
-import HandBlender from './Service/HandBlender';
-import RiceCooker from './Service/RiceCooker';
-import Fan from './Service/Fan';
-import Induction from './Service/Induction';
-import AirCooler from './Service/AirCooler';
-import Plumbing from './Service/Plumbing';
-
 import Blog from './blog/blog';
 import Article from './blog/article';
 import Mep from './Service/Mep';
+import Booking from './Service/Booking';
+
+// import HomeAppliances from './Service/HomeAppliances';
+// import ElectricalMotors from './Service/ElectricalMotors';
+// import HomeAutomation from './Service/HomeAutomation';
+// import RoService from './Service/RoService';
+// import Tv from './Service/Tv';
+// import WashingMachine from './Service/WashingMachine';
+// import Refrigerator from './Service/Refrigerator';
+// import Microwave from './Service/Microwave';
+// import Chimney from './Service/Chimney';
+// import Geyser from './Service/Geyser';
+// import Mixer from './Service/Mixer';
+// import FoodProcessor from './Service/FoodProcessor';
+// import HandBlender from './Service/HandBlender';
+// import RiceCooker from './Service/RiceCooker';
+// import Fan from './Service/Fan';
+// import Induction from './Service/Induction';
+// import AirCooler from './Service/AirCooler';
+// import Plumbing from './Service/Plumbing';
+
 function Root() {
   
   return <>
@@ -66,25 +67,29 @@ function Root() {
         <Route exact path="/electrical-contractor.aspx" element={<ElectricalContractor />} />
   <Route exact path="/electrical-services" element={<ElectricalServices/>} />
   <Route exact path="/electrical-services.html" element={<ElectricalServices/>} />
-  
+                    <Route exact path="/fire-fitting" element={<FireFitting />} />
+                    <Route exact path="/fire-fitting.html" element={<FireFitting />} />
+                    <Route exact path="/hvac" element={<AirConditioner />} />
+                    <Route exact path="/booking/:id" element={<Booking />} />
+                    <Route exact path="/blog" element={<Blog />} />
+                    <Route exact path="/testimonials" element={<Testimonials />} />
+                    <Route exact path="/article/:id/:uri" element={<Article />} />
+
+                    {/*
   <Route exact path="/home-appliances" element={<HomeAppliances/>} />
   <Route exact path="/home-appliances.html" element={<HomeAppliances/>} />
   <Route exact path="/electrical-motors" element={<ElectricalMotors/>} />
   <Route exact path="/electrical-motors.html" element={<ElectricalMotors/>} />
-        <Route exact path="/fire-fitting" element={<FireFitting />} />
-        <Route exact path="/fire-fitting.html" element={<FireFitting />} />
   <Route exact path="/home-automation" element={<HomeAutomation/>} />
   <Route exact path="/home-automation.html" element={<HomeAutomation/>} />
   <Route exact path="/ro-services" element={<RoService/>} />
   <Route exact path="/ro-services.aspx" element={<RoService/>} />
-        <Route exact path="/hvac" element={<AirConditioner />} />
   <Route exact path="/lcd-led-tv" element={<Tv/>} />
   <Route exact path="/washing-machine" element={<WashingMachine/>} />
   <Route exact path="/refrigerator" element={<Refrigerator/>} />
   <Route exact path="/microwave" element={<Microwave/>} />
   <Route exact path="/chimney" element={<Chimney/>} />
   <Route exact path="/geyser" element={<Geyser/>} />
-  <Route exact path="/booking/:id" element={<Booking/>} />
    <Route exact path="/mixer" element={<Mixer/>} />
     <Route exact path="/food-processor" element={<FoodProcessor/>} />
      <Route exact path="/hand-blender" element={<HandBlender/>} />
@@ -93,10 +98,7 @@ function Root() {
          <Route exact path="/induction" element={<Induction/>} />
           <Route exact path="/air-cooler" element={<AirCooler/>} />
           <Route exact path="/plumbing" element={<Plumbing/>} />
-          <Route exact path="/blog" element={<Blog/>} />
-          <Route exact path="/testimonials" element={<Testimonials/>} />
-          <Route exact path="/article/:id/:uri" element={<Article/>} />
-          
+           */}
 
 </Routes>
 <Footer/>
