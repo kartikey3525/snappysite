@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.4086459f.css",
-    "main.js": "/static/js/main.2d8f2ffa.js",
+    "main.css": "/static/css/main.e9819b1a.css",
+    "main.js": "/static/js/main.961e9e80.js",
     "static/js/787.29e4f7ef.chunk.js": "/static/js/787.29e4f7ef.chunk.js",
     "static/media/newfooter.png": "/static/media/newfooter.d445c39afbaa1285d849.png",
     "static/media/banner2.png": "/static/media/banner2.26162dd7c0f4b9f3227f.png",
-    "static/media/fontawesome-webfont3e6e.svg?v=4.7.0": "/static/media/fontawesome-webfont3e6e.6878d55e3615ccf40c38.svg",
+    "static/media/whyus.jpg": "/static/media/whyus.19821b3f277b8e41f199.jpg",
+    "static/media/fontawesome-webfont3e6e.svg?v=4.7.0": "/static/media/fontawesome-webfont3e6e.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont3e6e.eot?v=4.7.0": "/static/media/fontawesome-webfont3e6e.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfontd41d.eot": "/static/media/fontawesome-webfontd41d.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont3e6e.ttf?v=4.7.0": "/static/media/fontawesome-webfont3e6e.1e59d2330b4c6deb84b3.ttf",
-    "static/media/glyphicons-halflings-regular.svg": "/static/media/glyphicons-halflings-regular.9a17786234899efcc963.svg",
+    "static/media/glyphicons-halflings-regular.svg": "/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
     "static/media/fontawesome-webfont3e6e.woff?v=4.7.0": "/static/media/fontawesome-webfont3e6e.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont3e6e.woff2?v=4.7.0": "/static/media/fontawesome-webfont3e6e.20fd1704ea223900efa9.woff2",
     "static/media/services_back.jpg": "/static/media/services_back.b06d9fa92b5c13f66667.jpg",
@@ -22,12 +23,12 @@
     "static/media/glyphicons-halflings-regular.woff2": "/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "static/media/title_back.jpg": "/static/media/title_back.2dd7ff0674678b139d43.jpg",
     "index.html": "/index.html",
-    "main.4086459f.css.map": "/static/css/main.4086459f.css.map",
-    "main.2d8f2ffa.js.map": "/static/js/main.2d8f2ffa.js.map",
+    "main.e9819b1a.css.map": "/static/css/main.e9819b1a.css.map",
+    "main.961e9e80.js.map": "/static/js/main.961e9e80.js.map",
     "787.29e4f7ef.chunk.js.map": "/static/js/787.29e4f7ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4086459f.css",
-    "static/js/main.2d8f2ffa.js"
+    "static/css/main.e9819b1a.css",
+    "static/js/main.961e9e80.js"
   ]
 }
