@@ -13,511 +13,603 @@ function Plumbing() {
   function handleClick() {
     service.current.scrollIntoView({ behavior: "smooth" });
   }
+
   function handleRepair() {
     repair.current.scrollIntoView({ behavior: "smooth" });
   }
+
   function handleInstall() {
     install.current.scrollIntoView({ behavior: "smooth" });
   }
+
+  const faqData = [
+    {
+      question: "Are you licensed?",
+      answer:
+        "Yes, we are licensed plumbing contractors in Delhi/NCR for commercial and residential projects.",
+    },
+    {
+      question: "What areas do you provide plumbing services in?",
+      answer:
+        "We provide plumbing services in Ghaziabad, Noida, Delhi, and surrounding NCR regions.",
+    },
+    {
+      question: "What types of plumbing services do you offer?",
+      answer:
+        "We provide leak repairs, pipe installations, drain cleaning, fixture replacements, water heater services, bathroom and kitchen plumbing, and commercial plumbing solutions.",
+    },
+    {
+      question: "How quickly can you respond to plumbing emergencies?",
+      answer:
+        "Our emergency plumbing team is available 24/7 and responds quickly to minimize downtime and property damage.",
+    },
+    {
+      question: "Are your plumbers licensed and insured?",
+      answer:
+        "Yes, all our plumbers are licensed, insured, experienced, and trained to deliver high-quality plumbing solutions.",
+    },
+    {
+      question: "How do I schedule a plumbing service appointment?",
+      answer:
+        "You can schedule a service appointment by calling our support team or submitting a request through our website.",
+    },
+  ];
+
+  const [activeFaq, setActiveFaq] = useState(0);
 
   return (
     <>
       <Helmet>
         <title>
-          Professional Plumbing Service in Ghaziabad, Noida, and Delhi | Expert
-          Plumbers at Your Doorstep
+          Professional Plumbing Service in Ghaziabad, Noida, and Delhi
         </title>
 
         <meta
           name="description"
-          content="Looking for professional plumbing services in Ghaziabad, Noida, and Delhi? Our expert plumbers are ready to tackle all your plumbing needs. From repairs to installations, trust us for reliable and efficient solutions. Contact us now for top-notch plumbing services in Ghaziabad, Noida, and Delhi. Get your plumbing issues resolved quickly and effectively with our trusted team of plumbers."
+          content="Looking for professional plumbing services in Ghaziabad, Noida, and Delhi? Our expert plumbers are ready to tackle all your plumbing needs."
         />
-        <link rel="canonical" href="https://www.snappyserv.com/plumbing" />
+
+        <link
+          rel="canonical"
+          href="https://www.snappyserv.com/plumbing"
+        />
       </Helmet>
-      <section id="What_offer">
-        <div className="container text-center ">
-          <div
-            className="row text-center"
-            style={{ marginTop: "15px", verticalAlign: "middle" }}
-          >
-            {/* <div className="col-md-8 col-sm-6 col-xs-12"> */}
-            {/* content heading and intro */}
-            <div style={{ justifyContent: "center", alignItems: "center" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Reliable Plumbing Contracting Services: Your Trusted Partner for
-                All Plumbing Needs Welcome to our plumbing contracting services!
-                Whether you're facing a plumbing emergency, planning a
-                renovation, or need routine maintenance, our team is dedicated
-                to delivering expert solutions that ensure your plumbing systems
-                operate smoothly and efficiently.
-              </p>
 
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                What is Plumbing Contracting? Plumbing Contracting involves the
-                installation, maintenance, and repair of plumbing systems in
-                residential, commercial, and industrial settings. From fixing
-                leaks and unclogging drains to designing and installing new
-                plumbing systems, our comprehensive services are tailored to
-                meet your specific needs and ensure the reliable operation of
-                your plumbing infrastructure.
-              </p>
+      <style>
+        {`
+          .plumbing-page {
+            background: #f7f9fc;
+            overflow: hidden;
+          }
 
-              {/* <img
-                src={"../assets/images/plumbing1.jpg"}
-                // className="img-responsive"
-                style={{
-                  borderRadius: "30px",
-                  alignContent: "center",
-                  width: "60%",
-                }}
-                alt=""
-              /> */}
-            </div>
-            {/* </div> */}
+          .plumbing-section {
+            padding: 90px 0;
+          }
 
-            {/* <div className="col-md-4 col-sm-6 col-xs-12">
-              <img
-                src="../assets/images/service/plumber.png"
-                className="img-responsive"
-                style={{ borderRadius: "30px" }}
-              />
-            </div> */}
-          </div>
-        </div>
-      </section>
+          .plumbing-container {
+            width: 100%;
+            max-width: 1240px;
+            margin: auto;
+            padding: 0 20px;
+          }
 
-      <section id="What_offer">
-        <div className="container text-justify">
-          <div className="row">
-            {/* content place */}
-            <h1
-              className="service-heading"
-              style={{
-                fontWeight: "bold",
-                fontSize: "25px",
-                textDecorationLine: "underline",
-                marginBottom: "4%",
-              }}
-            >
-              Our Plumbing Contracting Services :
-            </h1>
+          .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              1. Installation
-            </h1>
+          .hero-title {
+            font-size: 54px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: #101828;
+            margin-bottom: 24px;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <img
-                src="../assets/images/plumbing1.jpg"
-                style={{
-                  borderRadius: "30px",
-                  width: "40%",
-                  float: "right",
-                  margin: " 10px 10px 0",
-                }}
-                alt=""
-              />
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                New Construction: We provide expert plumbing installation for
-                new construction projects, ensuring that all systems are
-                designed and installed according to the highest standards.
-                Remodeling Projects: Whether you’re renovating your kitchen,
-                bathroom, or entire home, we offer custom plumbing solutions to
-                match your design and functionality requirements.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Fixtures and Appliances: Our team installs a wide range of
-                plumbing fixtures and appliances, including sinks, faucets,
-                toilets, water heaters, and more.
-              </p>
-            </div>
+          .hero-text {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #667085;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              2. Maintenance
-            </h1>
+          .hero-image {
+            width: 100%;
+            border-radius: 32px;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Routine Inspections: Regular inspections help identify potential
-                issues before they become major problems. We offer scheduled
-                maintenance to keep your plumbing systems in top condition.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Preventative Care: Our maintenance services include cleaning
-                drains, checking for leaks, and ensuring that all components are
-                functioning properly to prevent future issues. Water Quality
-                Testing: We test your water for contaminants and provide
-                solutions to improve water quality, including filter
-                installations and water softening systems.
-              </p>
-            </div>
+          .section-card {
+            background: #fff;
+            border-radius: 36px;
+            padding: 70px;
+            box-shadow: 0 12px 50px rgba(16,24,40,0.05);
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              3. Repairs
-            </h1>
+          .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            color: #101828;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Leak Detection and Repair: We use advanced technology to detect
-                leaks and provide prompt repairs to prevent water damage and
-                reduce waste. Clog Removal: From minor clogs to severe
-                blockages, our team has the tools and expertise to clear drains
-                and restore proper flow.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Pipe Repairs and Replacements: We handle pipe repairs and
-                replacements for both residential and commercial properties,
-                including addressing issues such as corrosion, burst pipes, and
-                damaged sections.
-              </p>
-            </div>
+          .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 40px;
+            margin-top: 60px;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              4. Emergency Services
-            </h1>
+          .service-block {
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 36px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(16,24,40,0.05);
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                24/7 Availability: Plumbing emergencies can occur at any time.
-                Our team is available around the clock to address urgent issues
-                and minimize damage to your property. Rapid Response: We
-                prioritize quick response times to ensure that emergency
-                plumbing problems are resolved efficiently and effectively.
-              </p>
-            </div>
+          .service-block h3 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #005bea;
+            margin-bottom: 20px;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              5. System Upgrades
-            </h1>
+          .service-block p {
+            font-size: 16px;
+            line-height: 2;
+            color: #667085;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Water Heater Upgrades: We offer installation and replacement
-                services for water heaters, including traditional tank systems
-                and modern tankless models.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Pipe Upgrades: If your plumbing system is outdated, we can
-                upgrade pipes to improve performance and prevent issues related
-                to aging infrastructure.
-              </p>
-            </div>
+          .service-image {
+            width: 100%;
+            border-radius: 24px;
+            margin: 24px 0;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              6. Commercial Plumbing Services
-            </h1>
+          .sticky-sidebar {
+            position: sticky;
+            top: 30px;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Custom Solutions: For businesses, we provide specialized
-                plumbing solutions tailored to commercial spaces, including
-                office buildings, restaurants, and retail stores.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Maintenance Contracts: We offer maintenance contracts for
-                commercial properties to ensure ongoing care and prompt response
-                to any plumbing issues.
-              </p>
-            </div>
+          .cta-card {
+            background: linear-gradient(135deg, #005bea 0%, #00c6fb 100%);
+            border-radius: 32px;
+            padding: 34px;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+          }
 
-            {/* <div className="col-md-4" style={{ padding: "20px" }}>
-              <div
-                className="row text-left  banner_content service_banner_layer"
-                id="service_banner"
-              >
-                <div
-                  className="col-md-12 col-sm-12 col-xs-12 "
-                  style={{ padding: "20px" }}
-                >
-                  <h1 className="service-heading">
-                    Book your AC Services Today
-                  </h1>
-                  <p>
-                    {" "}
-                    Our service technicians deliver quick and efficient air
-                    conditioner repair and service. We are experts in all brands
-                    and models of air conditioners.
-                  </p>
-                  <h2>Why Choose Us? </h2>
-                  <br />
-                  <ul className="featurs_list">
-                    <li>
-                      <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                      Certified Technician
-                    </li>
-                    <li>
-                      <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                      Same Day Service
-                    </li>
-                    <li>
-                      <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                      Best Quality Service
-                    </li>
-                    <li>
-                      <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                      Best Pricing
-                    </li>
-                  </ul>
-                </div>
-                <QuickContact />
-              </div>
-              <QuickLink />
-            </div> */}
-          </div>
-        </div>
-      </section>
-      <section id="service_banner">
-        <div className="container text-center service_banner_layer">
-          <div className="banner_content">
-            <div className="row text-left">
-              <div className="col-md-8 col-sm-8 col-xs-12">
-                <h1 className="service-heading">
-                  Professional Plumbing Service in Ghaziabad, Noida, and Delhi
+          .cta-card::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            top: -120px;
+            right: -100px;
+          }
+
+          .cta-card h2 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .cta-card p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.92);
+            position: relative;
+            z-index: 2;
+          }
+
+          .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 24px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .feature-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .contact-wrapper {
+            margin-top: 28px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .why-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border-radius: 30px;
+            padding: 50px;
+            margin-top: 60px;
+            border: 1px solid rgba(16,24,40,0.05);
+          }
+
+          .why-card p {
+            font-size: 16px;
+            line-height: 2;
+            color: #667085;
+          }
+
+          .faq-section {
+            margin-top: 70px;
+          }
+
+          .faq-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            border: 1px solid rgba(16,24,40,0.05);
+            box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+          }
+
+          .faq-question {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+          }
+
+          .faq-question h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #101828;
+          }
+
+          .faq-answer {
+            padding: 0 28px 24px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #667085;
+          }
+
+          .faq-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #f2f4f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #005bea;
+          }
+
+          .bottom-cta {
+            text-align: center;
+            margin-top: 70px;
+            background: #fff;
+            padding: 60px 30px;
+            border-radius: 32px;
+            box-shadow: 0 12px 40px rgba(16,24,40,0.05);
+          }
+
+          .bottom-cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: #101828;
+          }
+
+          .bottom-cta p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #667085;
+          }
+
+          .phone {
+            margin-top: 24px;
+            font-size: 34px;
+            font-weight: 800;
+            color: #ff7a00;
+          }
+
+          @media (max-width: 1100px) {
+            .hero-grid,
+            .service-layout {
+              grid-template-columns: 1fr;
+            }
+
+            .sticky-sidebar {
+              position: relative;
+              top: 0;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .plumbing-section {
+              padding: 70px 0;
+            }
+
+            .hero-title {
+              font-size: 38px;
+            }
+
+            .section-title,
+            .bottom-cta h2 {
+              font-size: 30px;
+            }
+
+            .section-card,
+            .why-card {
+              padding: 32px 24px;
+            }
+
+            .service-block {
+              padding: 24px;
+            }
+          }
+        `}
+      </style>
+
+      <div className="plumbing-page">
+        {/* HERO */}
+        <section className="plumbing-section">
+          <div className="plumbing-container">
+            <div className="hero-grid">
+              <div>
+                <h1 className="hero-title">
+                  Reliable Plumbing Contracting Services
                 </h1>
-                <p>
-                  We have extensive experience in effectively dealing with
-                  corporate and private clients, and understands the diverse
-                  design solutions that each of these clients require.
+
+                <p className="hero-text">
+                  Your trusted partner for plumbing installation,
+                  maintenance, repairs, and emergency plumbing
+                  solutions across residential, commercial, and
+                  industrial projects.
                 </p>
-                <h2>Why choose Snappy?</h2>
-                <ul className="featurs_list">
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Qualified Expert
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Workmanship Quality
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Quality Professionals
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Affordable Package
-                  </li>
-                </ul>
-                {/*  <a className="btn btn-warning btn-booknow" href="booking.html"> Book now </a> */}
-              </div>
-              <div className="col-md-4 col-sm-4 col-xs-12">
-                <QuickContact />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="What_offer">
-        <div className="container text-center ">
-          <div
-            className="row text-left text-justify"
-            style={{ marginTop: "15px", verticalAlign: "middle" }}
-          >
-            <h1 className="panel-heading text-center">
-              Why Snappy best choice for you?
-            </h1>
-            <div className="col-md-12 col-sm-12 col-xs-12">
-              <p>
-                At Snappy Services, we pride ourselves on being a leading
-                provider of comprehensive plumbing solutions for commercial
-                properties across Ghaziabad and the NCR region. With a team of
-                certified and highly skilled plumbers, we specialize in
-                delivering efficient and lasting plumbing repairs and
-                maintenance tailored for businesses, property management firms,
-                and commercial facilities.
-                <br></br>
-                <br></br>
-                We understand that even minor plumbing issues in a commercial
-                setting can lead to significant downtime, operational
-                disruptions, and costly repairs if left unaddressed. From a
-                leaking faucet to complex drainage systems, timely intervention
-                is key to maintaining the safety and functionality of your
-                building. That’s why businesses across the region trust Snappy
-                Services for proactive, reliable, and cost-effective plumbing
-                solutions.
-                <br></br>
-                <br></br>
-                Our approach is built on precision and expertise. With extensive
-                industry knowledge, our technicians diagnose and fix plumbing
-                issues with minimal disruption to your operations. We back our
-                work with a warranty, ensuring that our solutions are not just
-                quick fixes but long-lasting repairs that meet the highest
-                standards of quality and compliance.
-                <br></br>
-                <br></br>
-                As a professional company, we treat our customers like friends
-                and neighbours, because that’s what they are!
-                <br></br>
-                <br></br>
-                Expert Team: Our certified plumbers are trained to handle the
-                unique challenges of commercial plumbing, from complex
-                installations to emergency repairs.
-                <br></br>
-                <br></br>
-                Reliability: We deliver on time and within budget, ensuring your
-                business can continue to operate smoothly.
-                <br></br>
-                <br></br>
-                Transparent Pricing: Before we begin, we provide a clear
-                explanation of the work required and a detailed cost breakdown,
-                so there are no surprises. High Standards: Our work adheres to
-                the highest industry standards, ensuring safety and longevity
-                for your plumbing systems. Partner with Snappy Services for
-                dependable plumbing support that keeps your commercial
-                operations running smoothly. Contact us today to discuss your
-                business’s plumbing requirements and schedule a service
-                consultation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+                <p className="hero-text" style={{ marginTop: 20 }}>
+                  Our expert plumbers ensure smooth and efficient
+                  plumbing operations with professional workmanship,
+                  transparent pricing, and long-term reliability.
+                </p>
+              </div>
 
-      <section id="service-faq">
-        <div className="container text-center">
-          <h1 className="panel-heading">Frequently Asked Questions</h1>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Are you licensed? </h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Yes, We are licensed electrical contractor in Delhi/NCR for
-                    Commercial, Residential projects.
-                  </p>
-                </div>
+              <div>
+                <img
+                  src="../assets/images/plumbing1.jpg"
+                  alt="Plumbing Services"
+                  className="hero-image"
+                />
               </div>
             </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>What areas do you provide plumbing services in?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    We provide plumbing services in Ghaziabad, Noida, and Delhi.
-                    We cover a wide range of locations in these areas to serve
-                    our customers efficiently.
-                  </p>
-                </div>
-              </div>
+
+            <div style={{ marginTop: 40 }}>
+              <QuickLink />
             </div>
           </div>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>What types of plumbing services do you offer??</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    We offer a comprehensive range of plumbing services,
-                    including leak repairs, pipe installations, drain cleaning,
-                    fixture replacements, water heater installations, bathroom
-                    and kitchen plumbing, and more. Our expert plumbers are
-                    equipped to handle both residential and commercial plumbing
-                    needs.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4> How quickly can you respond to plumbing emergencies?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    We understand the urgency of plumbing emergencies, and we
-                    strive to respond promptly. Our team is available 24/7, and
-                    we make every effort to reach your location as quickly as
-                    possible to address emergency plumbing situations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Are your plumbers licensed and insured?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Yes, all our plumbers are licensed professionals with
-                    extensive experience in the field. They are well-trained,
-                    fully insured, and adhere to industry standards to provide
-                    high-quality plumbing services.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>How do I schedule a plumbing service appointment?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Scheduling a plumbing service appointment is simple. You can
-                    give us a call, and our friendly customer service
-                    representatives will assist you in booking an appointment at
-                    your convenience. You can also request an appointment
-                    through our website by filling out a quick form.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row text-center">
-            <div className="col-md-12">
-              <h1 className="text-red">Still Have Questions?</h1>
-              <h2>
-                Give us a call at <strong>+91-99997 94426</strong>
+        </section>
+
+        {/* SERVICES */}
+        <section
+          className="plumbing-section"
+          style={{ paddingTop: 0 }}
+        >
+          <div className="plumbing-container">
+            <div className="section-card">
+              <h2 className="section-title">
+                Our Plumbing Contracting Services
               </h2>
-              <p>
-                Snappy is dedicated to providing you with the best service
-                possible.<br></br> We look forward to working with you!
-              </p>
+
+              <div className="service-layout">
+                <div>
+                  <div className="service-block">
+                    <h3>1. Installation</h3>
+
+                    <p>
+                      We provide professional plumbing installations
+                      for new construction and renovation projects,
+                      including sinks, faucets, toilets, water heaters,
+                      and complete plumbing systems.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>2. Maintenance</h3>
+
+                    <p>
+                      Our maintenance services include inspections,
+                      leak detection, drain cleaning, water quality
+                      testing, and preventative care to keep plumbing
+                      systems operating efficiently.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>3. Repairs</h3>
+
+                    <p>
+                      We handle leak repairs, clog removals, pipe
+                      repairs, pipe replacements, and drainage issues
+                      using advanced tools and professional expertise.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>4. Emergency Services</h3>
+
+                    <p>
+                      Our emergency plumbing team is available 24/7 for
+                      urgent plumbing issues, minimizing operational
+                      disruption and preventing further damage.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>5. System Upgrades</h3>
+
+                    <p>
+                      Upgrade aging plumbing infrastructure with modern
+                      water heaters, pipe systems, and high-efficiency
+                      plumbing solutions.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>6. Commercial Plumbing Services</h3>
+
+                    <p>
+                      We deliver customized commercial plumbing
+                      solutions for offices, restaurants, retail
+                      stores, industrial facilities, and commercial
+                      buildings.
+                    </p>
+                  </div>
+                </div>
+
+                {/* SIDEBAR */}
+                <div className="sticky-sidebar">
+                  <div className="cta-card">
+                    <h2>Professional Plumbing Services</h2>
+
+                    <p>
+                      Reliable plumbing solutions with certified
+                      technicians, fast response times, and quality
+                      workmanship.
+                    </p>
+
+                    <ul className="feature-list">
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Qualified Experts
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Quality Workmanship
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Fast Support
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Affordable Pricing
+                      </li>
+                    </ul>
+
+                      <QuickContact />
+                  </div>
+                </div>
+              </div>
+
+              {/* WHY SNAPPY */}
+              <div className="why-card">
+                <h2 className="section-title">
+                  Why Snappy Best Choice For You?
+                </h2>
+
+                <p>
+                  At Snappy Services, we provide dependable plumbing
+                  solutions for commercial and residential properties
+                  across Ghaziabad and NCR. Our certified plumbers
+                  specialize in efficient repairs, preventative
+                  maintenance, emergency services, and long-lasting
+                  plumbing infrastructure solutions.
+                </p>
+
+                <p style={{ marginTop: 20 }}>
+                  We understand that plumbing issues can disrupt
+                  operations and daily life. That’s why we focus on
+                  quick response times, accurate diagnostics, quality
+                  workmanship, transparent pricing, and reliable
+                  support backed by professional expertise.
+                </p>
+              </div>
+
+              {/* FAQ */}
+              <div className="faq-section">
+                <h2 className="section-title text-center">
+                  Frequently Asked Questions
+                </h2>
+
+                {faqData.map((faq, index) => {
+                  const isActive = activeFaq === index;
+
+                  return (
+                    <div className="faq-card" key={index}>
+                      <button
+                        className="faq-question"
+                        onClick={() =>
+                          setActiveFaq(isActive ? null : index)
+                        }
+                      >
+                        <h4>{faq.question}</h4>
+
+                        <div className="faq-icon">
+                          {isActive ? "-" : "+"}
+                        </div>
+                      </button>
+
+                      {isActive && (
+                        <div className="faq-answer">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* CTA */}
+              <div className="bottom-cta">
+                <h2>Still Have Questions?</h2>
+
+                <p>
+                  Snappy is committed to delivering professional
+                  plumbing services with reliability, transparency,
+                  and long-term customer satisfaction.
+                </p>
+
+                <div className="phone">
+                  +91-99997 94426
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
+
 export default Plumbing;

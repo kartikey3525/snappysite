@@ -1,508 +1,659 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import data from "../data/project";
-import "swiper/css/pagination";
 import { Helmet } from "react-helmet";
-
-import SwiperCore, { Autoplay, Navigation } from "swiper";
 import QuickContact from "./QuickContact";
-SwiperCore.use([Navigation, Autoplay]);
-function ElectricalContractor() {
-  const [items, setItem] = useState(data);
-  const serviceSlider = {
-    loop: true,
-    speed: 1000,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    slidesPerView: 3,
-    spaceBetween: 30,
+import QuickLink from "./QuickLink";
 
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+function ElectricalContractor() {
+  const faqData = [
+    {
+      question: "Are you licensed?",
+      answer:
+        "Yes, we are licensed electrical contractors in Delhi/NCR for commercial and residential projects.",
     },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 3,
-      },
+    {
+      question: "Do you have any references?",
+      answer:
+        "Yes, we have successfully completed projects for Supertech Limited, Wave Infra13 Private Limited, Yashoda Hospitals Pvt. Ltd., and many more.",
     },
-  };
+    {
+      question: "Who will perform the actual work?",
+      answer:
+        "Our licensed electrical engineers and certified technicians perform all electrical installations, maintenance, and repair work.",
+    },
+    {
+      question: "What are your service fees?",
+      answer:
+        "Service fees depend on the project scope and requirements. Contact us directly for detailed quotations and consultation.",
+    },
+    {
+      question: "What are your specialties?",
+      answer:
+        "We specialize in residential, commercial, industrial, township, hospital, retail, office, and infrastructure electrical projects.",
+    },
+    {
+      question: "Can you handle large industrial jobs?",
+      answer:
+        "Yes, we are fully equipped to handle industrial electrical construction, maintenance, and large-scale infrastructure projects.",
+    },
+  ];
+
+  const expertiseData = [
+    {
+      title: "Engineering",
+      items: [
+        "High Side & Low Side Electrical Works",
+        "Housing & Township Projects",
+        "Commercial & Retail Spaces",
+        "Hospital & Office Infrastructure",
+        "Private Villas",
+      ],
+    },
+    {
+      title: "Consultancy",
+      items: [
+        "Electrical Consultancy",
+        "Design & Layout Planning",
+        "Budget Estimation",
+        "Costing & Auditing",
+        "Quality Control",
+      ],
+    },
+    {
+      title: "Maintenance",
+      items: [
+        "Annual Maintenance Contracts",
+        "Preventive Maintenance",
+        "Breakdown Services",
+        "Comprehensive Maintenance",
+        "Electrical Monitoring",
+      ],
+    },
+    {
+      title: "Supply",
+      items: [
+        "LED Lights",
+        "Street Lights",
+        "Fire Fittings",
+        "Wires & Cables",
+        "DG Sets & Breakers",
+      ],
+    },
+  ];
+
+  const [activeFaq, setActiveFaq] = useState(0);
+
   return (
     <>
       <Helmet>
-        <title>Best Electrical Contractor Ghaziabad | Snappy Services</title>
+        <title>
+          Best Electrical Contractor Ghaziabad | Snappy Services
+        </title>
 
         <meta
           name="description"
-          content="Snappy Services An Approved Electrical Contractor Located In Ghaziabad, Install Wiring Fittings In Personal Homes, Construction Sites And Commercial Buildings. +91-9999794426"
+          content="Snappy Services is an approved electrical contractor located in Ghaziabad providing electrical installation, maintenance, and repair services."
         />
+
         <link
           rel="canonical"
           href="https://www.snappyserv.com/electrical-contractor.aspx"
         />
       </Helmet>
-      <section id="What_offer">
-        <div className="container text-center ">
-          <div
-            className="row text-left text-justify"
-            style={{ marginTop: "15px", verticalAlign: "middle" }}
-          >
-            <div className="col-md-8 col-sm-6 col-xs-12">
-              <h1
-                className="text-left"
-                style={{
-                  fontSize: "35px",
-                  fontWeight: "bold",
-                  marginBottom: "55px",
-                }}
-              >
-                Expert Electrical Contracting
-              </h1>
-              <p>
-                Services: Powering Your Projects with Precision and Reliability
-                Welcome to our top-tier electrical contracting services! Whether
-                you need a new electrical system installed, existing systems
-                maintained, or urgent repairs handled, our team is here to
-                provide professional, reliable, and efficient solutions. We are
-                dedicated to ensuring your electrical systems are safe,
-                functional, and up-to-date with the latest standards and
-                technologies.
-                <br></br>
-                What is Electrical Contracting? <br></br>
-                Electrical Contracting involves the planning, installation,
-                maintenance, and repair of electrical systems in residential,
-                commercial, and industrial settings. This includes everything
-                from wiring and circuit installations to lighting and energy
-                management systems. Our comprehensive electrical contracting
-                services ensure that your electrical systems are designed and
-                maintained to meet all your needs and safety requirements.
-                <br></br>
-              </p>
-            </div>
-            <div className="col-md-4 col-sm-6 col-xs-12">
-              <img
-                src="../assets/images/service/ec.png"
-                className="img-responsive"
-                style={{ borderRadius: "30px" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="What_offer">
-        <div className="container text-justify">
-          <div className="row">
-            {/* content place */}
-            <h1
-              className="service-heading"
-              style={{
-                fontWeight: "bold",
-                fontSize: "25px",
-                textDecorationLine: "underline",
-                marginBottom: "4%",
-              }}
-            >
-              Our Electrical Contracting Services :
-            </h1>
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              1. Installation
-            </h1>
+      <style>
+        {`
+          .electrical-page {
+            background: #f7f9fc;
+            overflow: hidden;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <img
-                src="../assets/images/electrical_cont.jpg"
-                style={{
-                  borderRadius: "30px",
-                  width: "40%",
-                  float: "right",
-                  margin: " 10px 10px 0",
-                }}
-                alt=""
-              />
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                New Electrical Systems: We design and install complete
-                electrical systems for new constructions, ensuring that all
-                wiring, outlets, and panels are installed to code and optimized
-                for safety and efficiency.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Lighting Solutions: Our team installs a variety of lighting
-                systems, including interior and exterior lighting,
-                energy-efficient LED solutions, and custom lighting designs to
-                enhance your space. Electrical Panels and Circuit Breakers: We
-                provide installation and upgrade services for electrical panels
-                and circuit breakers to ensure your system can handle your
-                electrical load safely and effectively.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Smart Home Integration: We offer installation of smart home
-                technologies, including automated lighting, smart thermostats,
-                and home security systems, to enhance convenience and energy
-                efficiency.
-              </p>
-            </div>
+          .electrical-section {
+            padding: 90px 0;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              2. Maintenance
-            </h1>
+          .electrical-container {
+            width: 100%;
+            max-width: 1240px;
+            margin: auto;
+            padding: 0 20px;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Routine Inspections: Regular inspections help identify potential
-                issues before they become serious problems. We offer scheduled
-                maintenance to keep your electrical systems running smoothly.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Troubleshooting: Our team performs thorough diagnostics to
-                identify and resolve electrical issues, ensuring that your
-                systems are functioning correctly and safely.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Upgrades and Replacements: We provide services for upgrading
-                outdated components and replacing faulty equipment to improve
-                performance and safety.
-              </p>
-            </div>
+          .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              3. Repairs
-            </h1>
+          .hero-title {
+            font-size: 54px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: #101828;
+            margin-bottom: 24px;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Emergency Repairs: Electrical emergencies can occur
-                unexpectedly. Our team is available 24/7 to handle urgent
-                repairs and restore power to your home or business quickly.
-                Wiring Repairs: We address issues related to faulty or damaged
-                wiring, ensuring that your electrical system is safe and
-                reliable.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Component Repairs: We repair or replace malfunctioning
-                electrical components, such as switches, outlets, and circuit
-                breakers, to maintain optimal system performance.
-              </p>
-            </div>
+          .hero-text {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #667085;
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              4. Energy Efficiency Solutions
-            </h1>
+          .hero-image {
+            width: 100%;
+            border-radius: 32px;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Energy Audits: We conduct comprehensive energy audits to
-                identify opportunities for improving energy efficiency and
-                reducing utility costs.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Energy-Efficient Upgrades: We offer solutions such as LED
-                lighting retrofits, smart thermostats, and energy-efficient
-                appliances to help you save on energy bills and minimize your
-                environmental footprint.
-              </p>
-            </div>
+          .section-card {
+            background: #fff;
+            border-radius: 36px;
+            padding: 70px;
+            box-shadow: 0 12px 50px rgba(16,24,40,0.05);
+          }
 
-            <h1
-              className="service-heading"
-              style={{ fontWeight: "bold", fontSize: "25px" }}
-            >
-              5. Commercial Electrical Services
-            </h1>
+          .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            color: #101828;
+          }
 
-            <div style={{ overflow: "hidden" }}>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Custom Solutions: For businesses, we provide tailored electrical
-                solutions to meet the unique needs of commercial spaces,
-                including office buildings, retail stores, and industrial
-                facilities.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Pipe Upgrades: If your plumbing system is outdated, we can
-                upgrade pipes to improve performance and prevent issues related
-                to aging infrastructure.
-              </p>
-              <p className="text-left" style={{ fontSize: "20px" }}>
-                Maintenance Contracts: We offer maintenance contracts for
-                commercial properties to ensure ongoing care and prompt response
-                to any electrical issues.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="service_banner">
-        <div className="container text-center service_banner_layer">
-          <div className="banner_content">
-            <div className="row text-left">
-              <div className="col-md-8 col-sm-8 col-xs-12">
-                <h1 className="service-heading">
-                  Reputed Electrical Contractor in Delhi/NCR
+          .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 40px;
+            margin-top: 60px;
+          }
+
+          .service-block {
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 36px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(16,24,40,0.05);
+          }
+
+          .service-block h3 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #005bea;
+            margin-bottom: 20px;
+          }
+
+          .service-block p {
+            font-size: 16px;
+            line-height: 2;
+            color: #667085;
+          }
+
+          .service-image {
+            width: 100%;
+            border-radius: 24px;
+            margin: 24px 0;
+          }
+
+          .sticky-sidebar {
+            position: sticky;
+            top: 30px;
+          }
+
+          .cta-card {
+            background: linear-gradient(135deg, #005bea 0%, #00c6fb 100%);
+            border-radius: 32px;
+            padding: 34px;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+          }
+
+          .cta-card::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            top: -120px;
+            right: -100px;
+          }
+
+          .cta-card h2 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .cta-card p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.92);
+            position: relative;
+            z-index: 2;
+          }
+
+          .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 24px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .feature-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .contact-wrapper {
+            margin-top: 28px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+          }
+
+          .expertise-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border-radius: 28px;
+            padding: 34px;
+            border: 1px solid rgba(16,24,40,0.05);
+            box-shadow: 0 8px 30px rgba(16,24,40,0.04);
+          }
+
+          .expertise-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #101828;
+            margin-bottom: 20px;
+          }
+
+          .expertise-card ul {
+            padding-left: 18px;
+            margin: 0;
+          }
+
+          .expertise-card li {
+            margin-bottom: 14px;
+            color: #667085;
+            line-height: 1.8;
+            font-size: 15px;
+          }
+
+          .faq-section {
+            margin-top: 70px;
+          }
+
+          .faq-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            border: 1px solid rgba(16,24,40,0.05);
+            box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+          }
+
+          .faq-question {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+          }
+
+          .faq-question h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #101828;
+          }
+
+          .faq-answer {
+            padding: 0 28px 24px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #667085;
+          }
+
+          .faq-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #f2f4f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #005bea;
+          }
+
+          .bottom-cta {
+            text-align: center;
+            margin-top: 70px;
+            background: #fff;
+            padding: 60px 30px;
+            border-radius: 32px;
+            box-shadow: 0 12px 40px rgba(16,24,40,0.05);
+          }
+
+          .bottom-cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: #101828;
+          }
+
+          .bottom-cta p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #667085;
+          }
+
+          .phone {
+            margin-top: 24px;
+            font-size: 34px;
+            font-weight: 800;
+            color: #ff7a00;
+          }
+
+          @media (max-width: 1100px) {
+            .hero-grid,
+            .service-layout,
+            .expertise-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .sticky-sidebar {
+              position: relative;
+              top: 0;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .electrical-section {
+              padding: 70px 0;
+            }
+
+            .hero-title {
+              font-size: 38px;
+            }
+
+            .section-title,
+            .bottom-cta h2 {
+              font-size: 30px;
+            }
+
+            .section-card {
+              padding: 32px 24px;
+            }
+
+            .service-block,
+            .expertise-card {
+              padding: 24px;
+            }
+          }
+        `}
+      </style>
+
+      <div className="electrical-page">
+        {/* HERO */}
+        <section className="electrical-section">
+          <div className="electrical-container">
+            <div className="hero-grid">
+              <div>
+                <h1 className="hero-title">
+                  Expert Electrical Contracting Services
                 </h1>
-                <p>
-                  We have extensive experience in effectively dealing with
-                  corporate and private clients, and understands the diverse
-                  design solutions that each of these clients require.
-                </p>
-                <h2>Why choose Snappy?</h2>
-                <ul className="featurs_list">
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Qualified Expert
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Workmanship Quality
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Quality Professionals
-                  </li>
-                  <li>
-                    <i className="fa fa-check-square-o" aria-hidden="true" />{" "}
-                    Affordable Package
-                  </li>
-                </ul>
-                {/*  <a className="btn btn-warning btn-booknow" href="booking.html"> Book now </a> */}
-              </div>
-              <div className="col-md-4 col-sm-4 col-xs-12">
-                <QuickContact />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="What_offer">
-        <div className="container text-justify">
-          <h1 className="panel-heading text-center">Areas of Expertise</h1>
 
-          <div className="row text-center">
-            <div className="col-md-3 mb-2">
-              <div className="boxstyle">
-                <h3>Engineering</h3>
-                <ul>
-                  <li>High side and Low Side Electrical works</li>
-                  <li>
-                    Turnkey Contractors for:
-                    <ul>
-                      <li>Housing/Township</li>
-                      <li>Malls/Commercial</li>
-                      <li>Offices</li>
-                      <li>Hospital</li>
-                      <li>Private Villas</li>
-                      <li>Individual Retail Spaces</li>
-                    </ul>
-                  </li>
-                </ul>
+                <p className="hero-text">
+                  Professional electrical contracting services for
+                  residential, commercial, and industrial projects with
+                  a focus on safety, efficiency, reliability, and
+                  long-term performance.
+                </p>
+
+                <p className="hero-text" style={{ marginTop: 20 }}>
+                  From installations and maintenance to emergency
+                  repairs and energy-efficient upgrades, we deliver
+                  modern electrical infrastructure solutions tailored to
+                  your project requirements.
+                </p>
+              </div>
+
+              <div>
+                <img
+                  src="../assets/images/service/ec.png"
+                  alt="Electrical Contractor"
+                  className="hero-image"
+                />
               </div>
             </div>
-            <div className="col-md-3 mb-2">
-              <div className="boxstyle">
-                <h3>Consultancy</h3>
-                <ul>
-                  <li>Electrical Consultants</li>
-                  <li>Design and Layout</li>
-                  <li>Artificial Intelligence</li>
-                  <li>Budget Estimation</li>
-                  <li>Costing and Auditing</li>
-                  <li>Quality Control</li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-3 mb-2">
-              <div className="boxstyle">
-                <h3>Maintenance</h3>
-                <ul>
-                  <li>Annual Maintenance Contracts</li>
-                  <li>
-                    Comprehensive / Non-comprehensive Maintenance Services
-                  </li>
-                  <li>Preventive Maintenance Services</li>
-                  <li>Breakdown Maintenance Services</li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-3 mb-2">
-              <div className="boxstyle">
-                <h3>Supply</h3>
-                <ul>
-                  <li>LED Lights</li>
-                  <li>Street Lights</li>
-                  <li>Fire Fitting</li>
-                  <li>Budget Estimation</li>
-                  <li>Wires and cables</li>
-                  <li>DG Sets</li>
-                  <li>Switchgears and Breakers</li>
-                </ul>
-              </div>
+
+            <div style={{ marginTop: 40 }}>
+              <QuickLink />
             </div>
           </div>
-          {/*<h1 className='panel-heading text-center'>Our Projects</h1>
-     <Swiper
-     {...serviceSlider}
-    >
-      <div className='row'>
-       
-        {items.map((element) => {
-          const { id,title, image, client, location,valuw,status } = element;
-          return (
-          
-             <SwiperSlide>
-               <div className='col-md-12 text-center boxstyle'>
-              <img src={image} className="img-responsive"  alt=''/>
-              <h3>{title}</h3>
-              <p><strong>Client:</strong> {client} </p>
-              <p><strong>Location:</strong> {location} </p>
-              <p><strong>Project Value:</strong> {valuw} </p>
-              <p><strong>Status:</strong> {status} </p>
-              </div> 
-              </SwiperSlide>
-           );})}
-         
-      </div>
-          </Swiper>*/}
-        </div>
-      </section>
-      <section id="service-faq">
-        <div className="container text-center">
-          <h1 className="panel-heading">Frequently Asked Questions</h1>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Are you licensed? </h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Yes, We are licensed electrical contractor in Delhi/NCR for
-                    Commercial, Residential projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Do you have any references?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Yes, We have succefully completed projects for Supertech
-                    Limited, Wave Infra13 Private Limited, Yashoda Hospitals
-                    Pvt. Ltd. and many more..
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Who will perform the actual work?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Our licensed electrical engineers will perform the actual
-                    work.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4> What are your service fees?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Serive fee depends on the project requirement. For more
-                    details call us on +91-9999794426.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row text-left">
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>What are your specialties?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    We are specialist in both residential and commercial
-                    electrical works. Our completed and maintenance projects
-                    include Housing, Township, Malls, Commercial Offices,
-                    Hospital, Villas and Retail Spaces.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12 text-left">
-              <div className="qa_box_one">
-                <div className="question">
-                  <strong>Q. </strong>
-                  <h4>Can you handle large industrial jobs?</h4>
-                </div>
-                <div className="answer">
-                  <strong>A.</strong>
-                  <p>
-                    Yes, we are experts in every facet of electrical
-                    construction, maintenance, and service. We are equipped to
-                    handle a complete range of projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row text-center">
-            <div className="col-md-12">
-              <h1 className="text-red">Still Have Questions?</h1>
-              <h2>
-                Give us a call at <strong>+91-99997 94426</strong>
+        </section>
+
+        {/* SERVICES */}
+        <section
+          className="electrical-section"
+          style={{ paddingTop: 0 }}
+        >
+          <div className="electrical-container">
+            <div className="section-card">
+              <h2 className="section-title">
+                Our Electrical Contracting Services
               </h2>
-              <p>
-                Snappy is dedicated to providing you with the best service
-                possible.<br></br> We look forward to working with you!
-              </p>
+
+              <div className="service-layout">
+                <div>
+                  <div className="service-block">
+                    <h3>1. Installation</h3>
+
+                    <img
+                      src="../assets/images/electrical_cont.jpg"
+                      alt="Electrical Installation"
+                      className="service-image"
+                    />
+
+                    <p>
+                      We design and install complete electrical
+                      systems, lighting solutions, electrical panels,
+                      smart home integrations, and energy-efficient
+                      infrastructure for residential and commercial
+                      projects.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>2. Maintenance</h3>
+
+                    <p>
+                      Our maintenance services include inspections,
+                      diagnostics, troubleshooting, upgrades, and
+                      preventive electrical maintenance to ensure safety
+                      and uninterrupted performance.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>3. Repairs</h3>
+
+                    <p>
+                      We provide emergency electrical repairs, wiring
+                      repairs, circuit breaker replacements, and
+                      electrical fault resolution with rapid response
+                      support.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>4. Energy Efficiency Solutions</h3>
+
+                    <p>
+                      Improve energy efficiency with LED retrofits,
+                      smart systems, energy audits, and modern
+                      electrical optimization solutions.
+                    </p>
+                  </div>
+
+                  <div className="service-block">
+                    <h3>5. Commercial Electrical Services</h3>
+
+                    <p>
+                      Customized commercial electrical solutions for
+                      office buildings, retail spaces, hospitals,
+                      industries, and infrastructure projects with full
+                      maintenance support.
+                    </p>
+                  </div>
+                </div>
+
+                {/* SIDEBAR */}
+                <div className="sticky-sidebar">
+                  <div className="cta-card">
+                    <h2>
+                      Reputed Electrical Contractor in Delhi/NCR
+                    </h2>
+
+                    <p>
+                      Trusted electrical infrastructure partner with
+                      certified professionals, quality workmanship, and
+                      reliable project execution.
+                    </p>
+
+                    <ul className="feature-list">
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Qualified Experts
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Quality Workmanship
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Professional Team
+                      </li>
+
+                      <li>
+                        <div className="feature-icon">✓</div>
+                        Affordable Packages
+                      </li>
+                    </ul>
+
+                      <QuickContact />
+                  </div>
+                </div>
+              </div>
+
+              {/* EXPERTISE */}
+              <div style={{ marginTop: 70 }}>
+                <h2 className="section-title text-center">
+                  Areas of Expertise
+                </h2>
+
+                <div className="expertise-grid">
+                  {expertiseData.map((item, index) => (
+                    <div className="expertise-card" key={index}>
+                      <h3>{item.title}</h3>
+
+                      <ul>
+                        {item.items.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* FAQ */}
+              <div className="faq-section">
+                <h2 className="section-title text-center">
+                  Frequently Asked Questions
+                </h2>
+
+                {faqData.map((faq, index) => {
+                  const isActive = activeFaq === index;
+
+                  return (
+                    <div className="faq-card" key={index}>
+                      <button
+                        className="faq-question"
+                        onClick={() =>
+                          setActiveFaq(isActive ? null : index)
+                        }
+                      >
+                        <h4>{faq.question}</h4>
+
+                        <div className="faq-icon">
+                          {isActive ? "-" : "+"}
+                        </div>
+                      </button>
+
+                      {isActive && (
+                        <div className="faq-answer">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* CTA */}
+              <div className="bottom-cta">
+                <h2>Still Have Questions?</h2>
+
+                <p>
+                  Snappy is committed to delivering professional
+                  electrical contracting services with reliability,
+                  safety, and industry-grade project execution.
+                </p>
+
+                <div className="phone">
+                  +91-99997 94426
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
+
 export default ElectricalContractor;
